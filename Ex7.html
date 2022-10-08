@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="Ex7.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <title>Exercise 7</title>
+
+        <script>
+            $(document).ready(function(){
+                $("#fbtn").click(function(){
+                    var c1 = parseInt($('#c1_mk').val());
+                    var c2 = parseInt($('#c2_mk').val());
+                    var c3 = parseInt($('#c3_mk').val());
+                    var c4 = parseInt($('#c4_mk').val());
+                    var c5 = parseInt($('#c5_mk').val());
+
+                    var avgmark=(c1+c2+c3+c4+c5)/5;
+                    $('#box1').html(avgmark);
+                    var grade="";
+
+    
+                    if(avgmark >= 95){
+                        grade+='S'
+                    }else if(avgmark>=85 & avgmark<95){
+                        grade+='A'
+                    }else if(avgmark>=75 & avgmark<=85){
+                        grade+='B'
+                    }else if(avgmark>=65 & avgmark<=75){
+                        grade+='C'
+                    }else if(avgmark>=50 & avgmark<=65){
+                        grade+='P'
+                    }else if(avgmark < 50){
+                        grade+='F'
+                    }
+
+                    $("#box2").text(grade);
+                });
+            });
+
+
+        </script>
+    </head>
+    <body>
+        <h1 class="title">My College</h1>
+        <h3 class="subtitle"> Grade Evaluation</h3>
+
+        <div class="form">
+            <form>
+                Student Name:<br> <input type="text" id='name'><br><br>
+                Student Regno:<br> <input type="text" id='regno'><br><br>
+                Course 1 Marks:<br> <input type="text" id='c1_mk'><br><br>
+                Course 2 Marks:<br> <input type="text" id='c2_mk'><br><br>
+                Course 3 Marks:<br> <input type="text" id='c3_mk'><br><br>
+                Course 4 Marks:<br> <input type="text" id='c4_mk'><br><br>
+                Course 5 Marks:<br> <input type="text" id='c5_mk'><br><br>
+                
+                
+            </form>
+        </div>
+
+       <div class="fbtn">
+        <button id='fbtn'>Find Grade</button> <br>
+       </div>
+
+       <hr>
+
+       <h2 class="restitle"> Grade Details</h2>
+
+       <div class="box1head">
+        <div id='box1head'>Average Marks </div> &nbsp;&nbsp;
+        <div id='box1' class="box1"></div>
+       </div>
+       <br>
+       <div class="box2head">
+        <div id='box2head'> Grade </div> &nbsp;&nbsp;
+        <div id='box2' class="box2"></div>
+       </div>
+
+
+    </body>
+</html>
